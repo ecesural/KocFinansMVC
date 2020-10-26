@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "CreditResult";
+    Layout = "../Shared/_Layout.cshtml";
+}
+
+@model KoçFinans.FullStackProject.Data.Entity.UserInformation
+<br />
+@using (Html.BeginForm("CreditResult", "Credit",FormMethod.Post))
+{
+<div class="row">
+    <div class="col-md-2">
+        <div class="form-group">
+            @Html.LabelFor(p => p.TCNo)
+            @Html.TextBoxFor(p => p.TCNo)
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="form-group">
+            @Html.Label("Ad")
+            @Html.TextBoxFor(p => p.Name)
+
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="form-group">
+            @Html.Label("Soyad")
+            @Html.TextBoxFor(p => p.Surname)
+
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="form-group">
+            @Html.Label("Aylık Gelir")
+            @Html.TextBoxFor(p => p.MonthlyGain)
+
+
+            <small>Format: 5000 (beş bin tl)</small>
+
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="form-group">
+            @Html.Label("Telefon")
+            @Html.TextBoxFor(p => p.TelNo)
+
+          
+
+            <small>Format: 538-456-7890</small>
+
+
+        </div>
+        <button type="submit" class="btn btn-success">Kaydet</button>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <h2>Kredi Sonucu : @ViewBag.result</h2><br />
+    <h2>Kredi Limiti : @ViewBag.resultLimit TL </h2>
+
+</div>
+}
